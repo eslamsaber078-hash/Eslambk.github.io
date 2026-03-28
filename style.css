@@ -239,12 +239,17 @@
     margin: 20px;
     transition: 0.3s;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    
+    
 }
 .project-card:hover{
     transform:scale(1.1);
 }
-.project-image img{
-    width:100%;
+.project-image img {
+    width: 100%;
+    
+    
+    
     
 }
 .project-card:hover .project-image{
@@ -253,10 +258,11 @@
 .project-info{
     padding:1em;
 }
-.project-catigory{
-    font-size: 0.8em;
-    color : var(--textwhite);
-}
+
+    .project-catigory {
+        font-size: 0.8em;
+        color: var(--textwhite);
+    }
 .project-title{
     display:flex;
     flex-direction:column;
@@ -267,6 +273,8 @@
 }
 .project-title span{
     color : var(--textwhite);
+    font-size:0.8em;
+    text-transform: lowercase;
 }
 .more-details {
     color: #23a3fe;
@@ -352,33 +360,9 @@
         opacity: 1;
         transform: translate(0, 0) scale(1);
     }
-.typing {
-    font-size: 35px;
-    color: var(--textwhite);
-    white-space: nowrap; /* يمنع الكسر */
-    overflow: hidden; /* يخفي الحروف اللي لسة متكتبتش */
-    border-right: 3px solid #23a3fe; /* خط الـ cursor */
-    width: 0; /* البداية */
-    animation: typing 3s steps(25, end) forwards, blink 0.7s step-end infinite;
-}
+/*   انميشن الصفحه  */
 
-/* حركة الكتابة حرف حرف */
-@keyframes typing {
-    from {
-        width: 0;
-    }
 
-    to {
-        width: 100%;
-    }
-}
-
-/* حركة الكيرسر */
-@keyframes blink {
-    50% {
-        border-color: none;
-    }
-}
 @media (max-width: 768px) {
 
     /* Navbar */

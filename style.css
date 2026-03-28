@@ -84,24 +84,30 @@
 /*
     عدل مكان الصوره من هنا \/
 */
-.hero .container .div-image {
-/*        position: absolute;*/
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        background-repeat:no-repeat;
+    .hero .container .div-image {
+        /*                position: absolute;*/
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
         width: 30%;
         bottom: 100px;
         margin-right: 150px;
-        margin-top : 100px;
-        background-size : cover;
-        background-position:center;
-        background-attachment : fixed;
-        
-}
-.hero .container .div-image img{
-    width :100%;
-}
+        margin-top: 100px;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        flex-wrap: wrap;
+    }
+        .hero .container .div-image img {
+            width: 100%;
+            object-fit: contain;
+            display:flex;
+            height: auto; /* يحافظ على نسبة الطول للعرض */
+            max-width: 400px; /* أكبر عرض ممكن */
+            max-height: 80vh; /* لا تتعدى 80% من ارتفاع الشاشة */
+            object-fit: contain; /* يحافظ على الصورة بالكامل داخل الصندوق */
+        }
 .hero .container .div-text h4{
     color : #888;
     font-size :22px;
@@ -297,72 +303,169 @@
     color: dimgrey;
     padding:4px;
 }
+@keyframes smooth-float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.div-image img {
+    animation: smooth-float 5s ease-in-out infinite;
+    will-change: transform;
+}
+
+.float {
+    animation: float 4s linear infinite;
+    will-change: transform;
+}
 /*/
     ضبط ابعاد الموقع
 */
-@media (max-width: 820px) {
-    .hero {
-        min-height: 100vh;
-        overflow: hidden;
-        align-items: center;
-        transition: 0.3s;
+.page-load {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+    /* الحالة بعد التحميل */
+    .page-load.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+/* العنصر قبل الظهور */
+.scroll-element {
+    opacity: 0;
+    transform: translate(0, 50px) scale(0.8); /* يبدأ صغير ومن أسفل */
+    transition: all 0.9s cubic-bezier(0.6, 0.05, 0.28, 0.91); /* حركة سلسة وسريعة */
+}
+
+    /* العنصر بعد الظهور */
+    .scroll-element.visible {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+.typing {
+    font-size: 35px;
+    color: var(--textwhite);
+    white-space: nowrap; /* يمنع الكسر */
+    overflow: hidden; /* يخفي الحروف اللي لسة متكتبتش */
+    border-right: 3px solid #23a3fe; /* خط الـ cursor */
+    width: 0; /* البداية */
+    animation: typing 3s steps(25, end) forwards, blink 0.7s step-end infinite;
+}
+
+/* حركة الكتابة حرف حرف */
+@keyframes typing {
+    from {
+        width: 0;
     }
 
-        .hero header nav .nav-links a {
-            color: var(--textwhite);
-            display: inline-block;
-            padding-top: 10px;
-            margin: 0 1px;
-            transition: 0.3s;
-            font-size: 0.8em;
+    to {
+        width: 100%;
+    }
+}
+
+/* حركة الكيرسر */
+@keyframes blink {
+    50% {
+        border-color: none;
+    }
+}
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .hero header nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .nav-links {
+        font-size: 1.2em;
+        margin: 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero header nav  .nav-links a {
+            margin:auto;
+            padding-left:  revert;
         }
 
-        .hero header nav .logo {
-            font-size: 1.1em;
-            padding-top: 8px;
+    /* Hero */
+    .hero .container {
+        flex-direction: column;
+        justify-content: center;
+        height: auto;
+        text-align: center;
+        margin-top:40%;
+        
+    }
+
+        .hero .container .div-text {
+            position: static;
+            width: 100%;
+            transform: none;
         }
 
-            .hero header nav .logo span {
-                font-size: 1.1em;
+            .hero .container .div-text h1 {
+                font-size: 35px;
             }
 
         .hero .container .div-image {
-            position: relative;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            width:50%;
-            height:50%;      
-            top: 15%;
-            left: 45%;
-           margin-bottom:70%;
+            position: static;
+            width: 70%;
+            margin: 20px auto;
         }
-        .hero header nav .btn-mode {
-            color: var(--textwhite);
-            font-size: 25px;
-            cursor: pointer;
-        }
-        .hero .container .div-text .btn {
-            color: white;
-            background: #23a3fe;
-            padding: 15px;
-            border: 1px solid #23a3fe;
-            position: relative;
-            top: 0;
-            transition: 0.3s;
-            border-radius: 35px;
-            letter-spacing: 1px;
-        }
+
+    /* Social Icons */
+    .social-icons {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    /* Cards */
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    /* Projects */
+    .project-card {
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    /* Footer */
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-icons {
+        justify-content: center;
+        margin-top: 10px;
+    }
 }
 
-@media (max-width: 320px){
-    .hero .container .div-image {
-        position: relative;
-        width: 50%;
-        height: 50%;
-        display: flex;
-        top: 15%;
-        left: 55%;
-        margin-bottom: 70%;
-    }
+.hero header nav .btn-mode {
+    font-size: 20px;
 }

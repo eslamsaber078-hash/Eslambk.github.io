@@ -11,8 +11,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 
-<body >
-    <section class="hero " >
+<body>
+    <section class="hero ">
 
         <header>
             <nav>
@@ -59,13 +59,13 @@
 
             </div>
             <div class="div-image">
-                <img src="Picsart_26-03-21_10-33-53-424.png" alt="Photo creator" class="float page-load"/>
+                <img src="Picsart_26-03-21_10-33-53-424.png" alt="Photo creator" class="float page-load" />
 
 
             </div>
 
 
-        </div>      
+        </div>
     </section>
 
     <section class="cards " id="services">
@@ -116,8 +116,20 @@
                     <p class="project-catigory">manage your passowrd and save them </p>
                     <strong class="project-title">
                         <span>The file must be run on a computer. no user name requre password is 1234</span>
+
+
+
+
+
+
+                        <button onclick="openVideo()">Watch Video</button>
+
+                        <!--<a href="https://www.youtube.com/watch?v=bONFBeHGjXI" class="watch-video">watch video</a>-->
                         <a href="https://drive.google.com/file/d/1Fje31InEg6WogXpgg8-0CbpbFKFC4Pcm/view?usp=drive_link" class="more-details">Download on pc</a>
                     </strong>
+
+
+
 
 
                 </div>
@@ -371,8 +383,28 @@
                 ease: "power2.out"
             });
         });
+
         
+        function openVideo() {
+            let width = 900;
+            let height = 600;
+            let left = (screen.width - width) / 2;
+            let top = (screen.height - height) / 2;
+
+            window.open(
+                "https://www.youtube.com/watch?v=bONFBeHGjXI",
+                "videoPopup",
+                `width=${width},height=${height},top=${top},left=${left}`
+            );
+        }
+
     </script>
+
+
+
+
+
+
 
 </body>
 

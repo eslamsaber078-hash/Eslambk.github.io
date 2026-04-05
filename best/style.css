@@ -7,25 +7,18 @@
     scroll-behavior : smooth;
 
 }
-
 :root {
     --bgcolor: #080e1c;
     --textwhite: #fff;
     --bgsection: #0f172a;
     --opjcolor: #1f2937;
 }
-
 .white-theme {
     --bgcolor: #fff;
     --bgsection: #f3f4f6;
     --textwhite: #080e1c;
     --opjcolor: #fff;
     transition: 0.3s;
-}
-img {
-    user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none;
 }
 .hero {
     background-color: var(--bgcolor);
@@ -51,18 +44,6 @@ img {
     align-items :center;
     height :50px;
     
-}
-button{
-    background-color:orangered;
-    padding:5px;
-    border-radius: 25px;
-    cursor:pointer;
-    margin:20px;
-    transition:0.3s;
-}
-button:hover{
-    font-size:15px;
-    color:white;
 }
 .hero header nav .logo{
         color : var(--textwhite);
@@ -195,8 +176,8 @@ button:hover{
     justify-content: center;
     font-weight: 600;
     font-size: 2em;
-    margin-bottom: 50px;
-    padding-top: 70px;
+    margin-bottom: 30px;
+    padding-top: 50px;
 }
 .content {
     display: flex;
@@ -258,35 +239,24 @@ button:hover{
     margin: 20px;
     transition: 0.3s;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-    justify-content: space-between;
-    flex-direction: column;
-    display: flex;
-    height: 415px
 }
 .project-card:hover{
     transform:scale(1.1);
 }
-.project-image img {
-    width: 100%;
-    min-height:180px;
-    max-height:180px;
-    
-    
+.project-image img{
+    width:100%;
     
 }
-
-.project-card .project-image:hover{
+.project-card:hover .project-image{
     opacity:0.9;
 }
 .project-info{
     padding:1em;
 }
-
-    .project-catigory {
-        font-size: 0.8em;
-        color: var(--textwhite);
-        
-    }
+.project-catigory{
+    font-size: 0.8em;
+    color : var(--textwhite);
+}
 .project-title{
     display:flex;
     flex-direction:column;
@@ -297,36 +267,13 @@ button:hover{
 }
 .project-title span{
     color : var(--textwhite);
-    font-size:0.8em;
-    text-transform: lowercase;
 }
 .more-details {
-    color: black;
+    color: #23a3fe;
     transition: 0.3s;
-    border: solid 1px;
-    background-color: #4169E1;
-    padding: 10px;
-    border-radius: 15px;
-    align-items: center;
-    text-align: center;
 }
-    .more-details:hover {
-        color: blue;
-        color: white;
-        
-    }
-.watch-video{
-    color:black;
-    padding:10px;
-    border:solid 1px;
-    border-radius:15px;
-    margin:10px;
-    background-color:darkred;
-
-}
-.watch-video:hover{
-    color:white;
-
+.more-details:hover{
+    color:blue;
 }
 .cards-contact{
     background-color:var(--bgsection);
@@ -356,109 +303,9 @@ button:hover{
     color: dimgrey;
     padding:4px;
 }
-.how {
-    font-size: 1.5em; 
-    color:var(--textwhite);
-    padding-left:20px;
-    text-decoration:underline var(--textwhite);
-}
-.paragrafh {
-    font-size: 1.5em;
-    color: var(--textwhite);
-    font-family: Inter;
-    padding: 30px;
-    gap: 5px;
-    line-height: 30px;
-    text-align: justify;
-    border-right: 2px solid #2563eb; /* شكل المؤشر */
-    overflow: hidden;
-    transition: 0.3s;
-}
-
-
-
-@keyframes smooth-float {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-18px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.div-image img {
-    animation: smooth-float 5s ease-in-out infinite;
-    will-change: transform;
-}
-
-.float {
-    animation: float 4s linear infinite;
-    will-change: transform;
-}
 /*/
     ضبط ابعاد الموقع
 */
-.page-load {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease-out;
-}
-
-    /* الحالة بعد التحميل */
-    .page-load.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-/* العنصر قبل الظهور */
-.scroll-element {
-    opacity: 0;
-    transform: translate(0, 50px) scale(0.8); /* يبدأ صغير ومن أسفل */
-    transition: all 0.9s cubic-bezier(0.6, 0.05, 0.28, 0.91); /* حركة سلسة وسريعة */
-}
-
-    /* العنصر بعد الظهور */
-    .scroll-element.visible {
-        opacity: 1;
-        transform: translate(0, 0) scale(1);
-    }
-/*   انميشن الصفحه  */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-}
-
-.modal-content {
-    position: relative;
-    margin: 5% auto;
-    width: 80%;
-    max-width: 800px;
-}
-
-.close {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-
-
-
-
-
 @media (max-width: 768px) {
 
     /* Navbar */
@@ -469,12 +316,12 @@ button:hover{
     }
 
     .nav-links {
-        font-size: 0.9em;
+        font-size: 1.2em;
         margin: 10px 0;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 18px;
+        gap: 10px;
     }
 
     .hero header nav  .nav-links a {

@@ -407,42 +407,36 @@ button {
     text-decoration: underline var(--textwhite);
 }
 
-.paragrafh {
-    font-size: 1.5em;
-    color: var(--textwhite);
-    font-family: Inter;
-    padding: 30px;
-    gap: 5px;
-    line-height: 30px;
-    text-align: justify;
-    border-right: 2px solid #2563eb; /* شكل المؤشر */
-    overflow: hidden;
-    transition: 0.3s;
-}
+
 .About-me .About-info h2 span{
     letter-spacing:normal;
+    
 }
+    .About-me .About-info h2 span:hover{
+       cursor:pointer;
+    }
 
-.About-me {
-    width: 90%;
-    margin: 0px auto;
-    padding: 40px;
-    background-color: var(--opjcolor);
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-    transition: 0.3s;
-}
+    .About-me {
+        width: 90%;
+        margin: 0px auto;
+        padding: 40px;
+        background-color: var(--opjcolor);
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+    }
 
 .About-info {
     flex: 1;
     min-width: 280px;
     color: var(--textwhite);
     line-height: 1.8;
+    transition:0.3s;
     
 }
 
